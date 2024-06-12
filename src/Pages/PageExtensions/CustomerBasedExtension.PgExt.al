@@ -1,4 +1,4 @@
-pageextension 50100 CustomerBasedExtension extends "Customer List"
+pageextension 50105 CustomerBasedExtension extends "Customer List"
 {
 
     layout
@@ -13,7 +13,36 @@ pageextension 50100 CustomerBasedExtension extends "Customer List"
             }
         }
 
+        modify(Name)
+        {
+            StyleExpr = MyStyleExpr;
+        }
+
+        modify("No.")
+        {
+            StyleExpr = MyStyleExpr;
+        }
+
+        modify("Location Code")
+        {
+            StyleExpr = MyStyleExpr;
+        }
+
+        modify(Contact)
+        {
+            StyleExpr = MyStyleExpr;
+        }
+
     }
+    trigger OnAfterGetRecord()
 
+    begin
+        MyStyleExpr := 'Standard';
+        if Rec."Balance (LCY)" < 200000 then
+            MyStyleExpr := 'Attention';
 
+    end;
+
+    var
+        MyStyleExpr: Text;
 }
