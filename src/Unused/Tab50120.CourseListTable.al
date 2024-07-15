@@ -1,6 +1,6 @@
-table 50107 Course
+table 50120 "Course List Table"
 {
-    Caption = 'Course Table';
+    Caption = 'Course List Table';
     DataClassification = ToBeClassified;
 
     fields
@@ -9,22 +9,18 @@ table 50107 Course
         {
             Caption = 'Course Code';
         }
-        field(2; "Course Name"; Code[100])
+        field(2; "Course Name"; Code[50])
         {
             Caption = 'Course Name';
-        }
-        field(3; "Student No."; Code[20])
-        {
-            DataClassification = ToBeClassified;
         }
     }
     keys
     {
-        key(Key1; "Course Code")
+        key(PK; "Course Code")
         {
             Clustered = true;
         }
-        key(Key2; "Student No.")
+        key(Key1; "Course Name")
         {
 
         }

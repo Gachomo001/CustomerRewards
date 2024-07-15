@@ -117,7 +117,6 @@ page 50104 "Student Application Card"
                     end;
                 end;
             }
-
         }
         area(Navigation)
         {

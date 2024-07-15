@@ -89,6 +89,21 @@ table 50114 "Student Table"
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
         }
+        field(16; Created; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(17; "Current Year Of Study"; Integer)
+        {
+            Caption = 'Current Year Of Study';
+            DataClassification = ToBeClassified;
+        }
+        field(18; "Current Semester Of Study"; Integer)
+        {
+            Caption = 'Current Semester Of Study';
+            DataClassification = ToBeClassified;
+        }
+
     }
 
     keys

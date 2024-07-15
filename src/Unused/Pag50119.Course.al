@@ -1,10 +1,9 @@
-page 50110 "Course List"
+page 50119 "Current Course"
 {
     ApplicationArea = All;
-    Caption = 'Course List';
-    PageType = List;
+    Caption = 'Current Course';
+    PageType = ListPart;
     SourceTable = Course;
-    UsageCategory = Lists;
 
     layout
     {
@@ -12,6 +11,10 @@ page 50110 "Course List"
         {
             repeater(General)
             {
+                field("Student No."; Rec."Student No.")
+                {
+                    ToolTip = 'Specifies the value of the Course Name field.', Comment = '%';
+                }
                 field("Course Code"; Rec."Course Code")
                 {
                     ToolTip = 'Specifies the value of the Course Code field.', Comment = '%';

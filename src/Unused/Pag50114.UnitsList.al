@@ -2,9 +2,10 @@ page 50114 "Units List"
 {
     ApplicationArea = All;
     Caption = 'Units List';
-    PageType = List;
+    PageType = ListPart;
     SourceTable = Units;
-    UsageCategory = Lists;
+    //UsageCategory = Lists;
+    CardPageId = "Units Card";
 
     layout
     {
