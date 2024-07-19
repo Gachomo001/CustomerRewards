@@ -5,7 +5,7 @@ page 50124 "Fees Details"
     PageType = List;
     SourceTable = "Student Fee Table";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(Content)
@@ -15,6 +15,7 @@ page 50124 "Fees Details"
                 field("Student No."; Rec."Student No.")
                 {
                     ToolTip = 'Specifies the value of the Student No. field.', Comment = '%';
+                    TableRelation = "Student Table";
                 }
                 field("Annual Fee Payable"; Rec."Annual Fee Payable")
                 {

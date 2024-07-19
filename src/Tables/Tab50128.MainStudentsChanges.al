@@ -236,7 +236,7 @@ table 50129 "MainStudents Changes"
     var
         NoseriesMgt: Codeunit NoSeriesManagement;
         NSetup: record "Sales & Receivables Setup";
-        Students: record Students;
+        Students: record "Student Table";
         StdNo: code[20];
 
     trigger OnInsert()
@@ -292,7 +292,7 @@ table 50129 "MainStudents Changes"
 
     procedure UpdateStudents(StdNo: Code[20])
     var
-        OldStudent: Record Student;
+        OldStudent: Record "Student Table";
 
     begin
         if OldStudent.Get(StdNo) then begin

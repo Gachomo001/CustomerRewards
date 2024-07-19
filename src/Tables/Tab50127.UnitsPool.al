@@ -2,7 +2,7 @@ table 50127 "Units Pool"
 {
     Caption = 'Units Pool';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; "Unit Code "; Code[30])

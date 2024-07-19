@@ -39,7 +39,7 @@ page 50123 "Student Financial Details"
         CurrYear: Integer;
         CurrSem: Integer;
         Student: Record "Student Table";
-        AcaSem: Record "Academic Semester";
+        AcaSem: Record "Academic Semesters Table";
 
 
     trigger OnAfterGetRecord()
@@ -61,7 +61,7 @@ page 50123 "Student Financial Details"
             AcaSem.SetRange("Current Semester", true);
             if AcaSem.FindFirst() then begin
                 CurrSem := AcaSem.Semester;
-                CurrYear := AcaSem.Year;
+                CurrYear := AcaSem."Year ";
             end
         end;
     end;

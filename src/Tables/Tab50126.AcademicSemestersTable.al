@@ -52,7 +52,7 @@ table 50126 "Academic Semesters Table"
     }
     keys
     {
-        key(PK; Semester, "Year ")
+        key(key1; Semester, "Year ", "Student No.")
         {
             Clustered = true;
         }

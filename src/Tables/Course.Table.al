@@ -20,7 +20,7 @@ table 50107 Course
     }
     keys
     {
-        key(Key1; "Course Code")
+        key(Key1; "Course Code", "Course Name")
         {
             Clustered = true;
         }

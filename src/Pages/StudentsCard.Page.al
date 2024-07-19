@@ -117,7 +117,7 @@ page 50106 "Student Card"
                 field(CurrSemUnits; CurrentSemUnits)
                 {
                     ApplicationArea = All;
-                    Caption = 'Units Passed';
+                    Caption = 'Current Sem. Units';
                     ToolTip = 'Specifies the value of the Course field.', Comment = '%';
                 }
             }
@@ -240,19 +240,26 @@ page 50106 "Student Card"
         Units.Reset();
         Units.SetRange("Student No.", Rec."Student No.");
         Units.SetRange("Current Semester", true);
-        units.SetFilter("Total Score", '>%1', 50);
-        if Units.FindFirst() then
+        //units.SetFilter("Total Score", '>%1', 50);
+        if Units.FindFirst() then begin
             CurrentSemUnits := Units.Count;
-
-        CurrSem.Reset();
-        CurrSem.SetRange("Student No.", Rec."Student No.");
-        CurrSem.SetRange("Current Semester", true);
-        if CurrSem.FindFirst() then begin
-            if Rec."Current Semester Of Study" <> CurrSem.Semester then
-                Rec."Current Semester Of Study" := CurrSem.Semester;
-            if Rec."Current Year Of Study" <> CurrSem."Year " then
-                Rec."Current Year Of Study" := CurrSem."Year ";
-            Rec.Modify()
+            Rec."Current Semester Of Study" := Units."Semester ";
+            Rec."Current Year Of Study" := Units.Year;
+            Rec.Modify(true);
         end;
+
+        /*
+                CurrSem.Reset();
+                CurrSem.SetRange("Student No.", Rec."Student No.");
+                CurrSem.SetRange("Current Semester", true);
+                if CurrSem.FindFirst() then begin
+                    if Rec."Current Semester Of Study" <> CurrSem.Semester then
+                        Rec."Current Semester Of Study" := CurrSem.Semester;
+                    if Rec."Current Year Of Study" <> CurrSem."Year " then
+                        Rec."Current Year Of Study" := CurrSem."Year ";
+                    Rec.Modify()
+                end;
+        */
     end;
+
 }

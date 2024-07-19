@@ -26,12 +26,12 @@ table 50117 "Academic Year"
         {
             Caption = 'Annual Fee';
             FieldClass = FlowField;
-            CalcFormula = sum("Academic Semester"."Fee Payable" where(Year = field(Year)));
+            CalcFormula = sum("Academic Semesters Table"."Fee Payable " where("Year " = field(Year)));
         }
     }
     keys
     {
-        key(PK; "Course Code", Year)
+        key(PK; "Course Code", Year, "Student No.")
         {
             Clustered = true;
         }
